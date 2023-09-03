@@ -17,5 +17,6 @@ rootProject.name = "GiphyApp"
 include(
     ":app",
     ":gif",
-    ":resources"
+    ":resources",
+    ":core"
 )

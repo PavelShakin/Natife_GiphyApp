@@ -8,10 +8,8 @@ object Dependencies {
     object AndroidBase {
         const val ktx = ("androidx.core:core-ktx:1.10.1")
         const val appcompat = ("androidx.appcompat:appcompat:1.6.1")
-        const val material = ("androidx.compose.material3:material3:1.1.1")
         const val constraintLayout = ("androidx.constraintlayout:constraintlayout:2.2.0-alpha12")
         const val kotlinxMetadataJvm = ("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0")
-        const val fragments = ("androidx.fragment:fragment-ktx:1.5.5")
     }
 
     /**
@@ -76,6 +74,15 @@ object Dependencies {
         const val ui = ("androidx.navigation:navigation-ui-ktx:$version")
         const val testing = ("androidx.navigation:navigation-testing:$version")
         const val compose = ("androidx.navigation:navigation-compose:$version")
+    }
+
+    /**
+     * com.giphyapp.buildSrc.Dependencies: Tests
+     */
+    object Tests {
+        const val junit = ("junit:junit:4.13.2")
+        const val extJunit = ("androidx.test.ext:junit:1.1.5")
+        const val espressoCore = ("androidx.test.espresso:espresso-core:3.5.1")
     }
 
     /**

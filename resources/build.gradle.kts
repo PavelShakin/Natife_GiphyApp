@@ -2,7 +2,7 @@ import com.giphyapp.buildSrc.Config
 import com.giphyapp.buildSrc.Dependencies
 
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     kotlin("android")
     kotlin("kapt")
 }
@@ -12,11 +12,7 @@ android {
     compileSdk = Config.compileSdk
 
     defaultConfig {
-        applicationId = Config.Modules.application
         minSdk = Config.minSdk
-        targetSdk = Config.targetSdk
-        versionCode = Config.versionCode
-        versionName = Config.versionName
         multiDexEnabled = true
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner = Config.testInstrumentationRunner
@@ -46,15 +42,13 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
         compose = true
     }
 }
 
 dependencies {
-    //region Modules
-    implementation(project(Dependencies.Modules.core))
-    implementation(project(Dependencies.Modules.resources))
+//region Modules
+//    implementation(project(Dependencies.Modules.core))
 //    implementation(project(Dependencies.Modules.data))
 //    implementation(project(Dependencies.Modules.domain))
     //endregion
@@ -66,20 +60,6 @@ dependencies {
     runtimeOnly(Dependencies.AndroidBase.kotlinxMetadataJvm)
     //endregion
 
-    //region Navigation
-    implementation(Dependencies.Navigation.fragment)
-    implementation(Dependencies.Navigation.ui)
-    implementation(Dependencies.Navigation.compose)
-    implementation(Dependencies.Navigation.testing)
-    //endregion
-
-    //region DI
-    implementation(Dependencies.DI.dagger)
-    implementation(Dependencies.DI.daggerSupport)
-    kapt(Dependencies.DI.daggerCompiler)
-    kapt(Dependencies.DI.daggerAndroidProcessor)
-    //endregion
-
     //region Compose
     implementation(Dependencies.Compose.ui)
     implementation(Dependencies.Compose.activity)
@@ -89,12 +69,9 @@ dependencies {
     implementation(Dependencies.Compose.compiler)
     //endregion
 
-    //region Lifecycle
-    implementation(Dependencies.Lifecycle.runtime)
-    implementation(Dependencies.Lifecycle.livedata)
-    implementation(Dependencies.Lifecycle.viewModel)
-    implementation(Dependencies.Lifecycle.viewModelCompose)
-    implementation(Dependencies.Lifecycle.viewModelSavedState)
-    kapt(Dependencies.Lifecycle.compiler)
+    //region Tests
+    testImplementation(Dependencies.Tests.junit)
+    androidTestImplementation(Dependencies.Tests.extJunit)
+    androidTestImplementation(Dependencies.Tests.espressoCore)
     //endregion
 }
