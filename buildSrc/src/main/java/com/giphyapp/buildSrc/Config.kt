@@ -7,7 +7,7 @@ object Config {
     /**
      * com.giphyapp.buildSrc.Config: targetSdk
      */
-    const val targetSdk = 33
+    const val targetSdk = 34
     /**
      * com.giphyapp.buildSrc.Config: compileSdk
      */

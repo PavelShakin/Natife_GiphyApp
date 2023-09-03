@@ -1,6 +1,6 @@
 buildscript {
     dependencies {
-        classpath("com.android.tools.build:gradle:7.4.2")
+        classpath("com.android.tools.build:gradle:8.1.1")
         classpath("org.jlleitschuh.gradle:ktlint-gradle:11.5.1")
     }
     repositories {
