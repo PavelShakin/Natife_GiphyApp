@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.giphyapp.android.databinding.FragmentGifRootBinding
+import com.giphyapp.gif.databinding.FragmentGifRootBinding
 
 class GifRootFragment : Fragment() {
 

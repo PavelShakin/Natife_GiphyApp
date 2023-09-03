@@ -55,6 +55,7 @@ dependencies {
     //region Modules
     implementation(project(Dependencies.Modules.core))
     implementation(project(Dependencies.Modules.resources))
+    implementation(project(Dependencies.Modules.gif))
 //    implementation(project(Dependencies.Modules.data))
 //    implementation(project(Dependencies.Modules.domain))
     //endregion

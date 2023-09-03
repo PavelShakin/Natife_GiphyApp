@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = Config.Modules.application
+    namespace = Config.Modules.gif
     compileSdk = Config.compileSdk
 
     defaultConfig {
@@ -51,8 +51,6 @@ dependencies {
     //region Modules
     implementation(project(Dependencies.Modules.core))
     implementation(project(Dependencies.Modules.resources))
-//    implementation(project(Dependencies.Modules.data))
-//    implementation(project(Dependencies.Modules.domain))
     //endregion
 
     //region AndroidBase

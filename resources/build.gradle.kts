@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = Config.Modules.application
+    namespace = Config.Modules.resources
     compileSdk = Config.compileSdk
 
     defaultConfig {
