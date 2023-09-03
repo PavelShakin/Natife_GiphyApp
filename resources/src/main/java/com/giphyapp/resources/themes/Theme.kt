@@ -18,9 +18,9 @@ import androidx.core.view.WindowCompat
 
 object GiphyAppTheme {
     val colors: Colors
-    @Composable
-    @ReadOnlyComposable
-    get() = LocalColors.current
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalColors.current
 
     val typography: Typography
         @Composable

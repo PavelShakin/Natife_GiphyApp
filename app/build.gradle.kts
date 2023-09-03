@@ -97,4 +97,10 @@ dependencies {
     implementation(Dependencies.Lifecycle.viewModelSavedState)
     kapt(Dependencies.Lifecycle.compiler)
     //endregion
+
+    //region Tests
+    testImplementation(Dependencies.Tests.junit)
+    androidTestImplementation(Dependencies.Tests.extJunit)
+    androidTestImplementation(Dependencies.Tests.espressoCore)
+    //endregion
 }

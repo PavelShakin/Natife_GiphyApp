@@ -1,8 +1,6 @@
 package com.giphyapp.resources.themes
 
 import android.annotation.SuppressLint
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.graphics.Color
 
 data class Colors(
@@ -39,5 +37,5 @@ val basePalette = Colors(
     dismissColor = Color(color = 0xFFA74939),
     disabledButtonColor = Color(color = 0x80FFB151),
     errorColor = Color(color = 0xFFCF3E3E),
-    borderStrokeColor = Color(color = 0x80774D19),
+    borderStrokeColor = Color(color = 0x80774D19)
 )
