@@ -1,8 +1,8 @@
 package com.giphyapp.core.contracts.dispatchers
 
-import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
 
 interface ICoroutineDispatchers {
     val ui: CoroutineDispatcher

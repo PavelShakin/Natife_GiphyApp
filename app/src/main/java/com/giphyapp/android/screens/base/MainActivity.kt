@@ -1,46 +1,28 @@
 package com.giphyapp.android.screens.base
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.giphyapp.resources.themes.AppTheme
+import androidx.navigation.NavController
+import androidx.navigation.NavOptions
+import androidx.navigation.findNavController
+import com.giphyapp.core.navigation.NavCommand
+import com.giphyapp.core.navigation.NavigationProvider
 import dagger.android.support.DaggerAppCompatActivity
+import com.giphyapp.android.R as mainR
 
-class MainActivity : DaggerAppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity(), NavigationProvider {
+    private val navController: NavController
+        get() = findNavController(mainR.id.nav_host_fragment)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            AppTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
+        setContentView(mainR.layout.activity_main)
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AppTheme {
-        Greeting("Android")
+    override fun launch(navCommand: NavCommand) {
+        val navOptions = NavOptions.Builder()
+            .setLaunchSingleTop(false)
+            .setPopUpTo(mainR.id.application_nav_graph, false)
+            .build()
+        navController.navigate(navCommand.uri, navOptions)
     }
 }
