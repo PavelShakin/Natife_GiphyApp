@@ -22,3 +22,4 @@ include(
 )
 include(":data")
 include(":network")
+include(":domain")

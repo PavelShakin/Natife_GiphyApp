@@ -47,7 +47,6 @@ fun GifsListComponent(
             ) {
                 items(items = gifs) { item ->
                     GifCard(gif = item, onGifClicked = onGifClick)
-
                 }
             }
         }

@@ -1,4 +1,4 @@
-package com.giphyapp.network
+package com.giphyapp.domain
 
 import org.junit.Assert.*
 import org.junit.Test

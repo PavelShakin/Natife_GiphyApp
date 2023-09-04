@@ -9,6 +9,7 @@ import retrofit2.http.Query
 interface GifService {
     @GET(value = GifAPI.TRENDING)
     suspend fun getGifs(
+        @Query("api_key") apiKey: String = GifAPI.API_TOKEN,
         @Query("limit") limit: Long = 30,
         @Query("offset") offset: Long = 0,
         @Query("rating") rating: String = "g",

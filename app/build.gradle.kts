@@ -55,9 +55,6 @@ dependencies {
     //region Modules
     implementation(project(Dependencies.Modules.core))
     implementation(project(Dependencies.Modules.resources))
-    implementation(project(Dependencies.Modules.gif))
-//    implementation(project(Dependencies.Modules.data))
-//    implementation(project(Dependencies.Modules.domain))
     //endregion
 
     //region AndroidBase
@@ -88,15 +85,6 @@ dependencies {
     implementation(Dependencies.Compose.tooling)
     implementation(Dependencies.Compose.livedata)
     implementation(Dependencies.Compose.compiler)
-    //endregion
-
-    //region Lifecycle
-    implementation(Dependencies.Lifecycle.runtime)
-    implementation(Dependencies.Lifecycle.livedata)
-    implementation(Dependencies.Lifecycle.viewModel)
-    implementation(Dependencies.Lifecycle.viewModelCompose)
-    implementation(Dependencies.Lifecycle.viewModelSavedState)
-    kapt(Dependencies.Lifecycle.compiler)
     //endregion
 
     //region Tests

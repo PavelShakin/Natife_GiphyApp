@@ -47,11 +47,6 @@ android {
 }
 
 dependencies {
-//region Modules
-//    implementation(project(Dependencies.Modules.core))
-//    implementation(project(Dependencies.Modules.data))
-//    implementation(project(Dependencies.Modules.domain))
-    //endregion
 
     //region AndroidBase
     implementation(Dependencies.AndroidBase.ktx)

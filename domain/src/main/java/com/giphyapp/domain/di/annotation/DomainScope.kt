@@ -1,7 +1,7 @@
-package com.giphyapp.data.di.annotations
+package com.giphyapp.domain.di.annotation
 
 import javax.inject.Scope
 
 @Scope
 @Retention(AnnotationRetention.RUNTIME)
-annotation class DataScope
+annotation class DomainScope
