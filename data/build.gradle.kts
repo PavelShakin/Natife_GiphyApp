@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = Config.Modules.core
+    namespace = Config.Modules.data
     compileSdk = Config.compileSdk
 
     defaultConfig {
@@ -48,6 +48,10 @@ android {
 }
 
 dependencies {
+    //region Modules
+    implementation(project(Dependencies.Modules.core))
+    implementation(project(Dependencies.Modules.network))
+    //endregion
 
     //region AndroidBase
     implementation(Dependencies.AndroidBase.ktx)

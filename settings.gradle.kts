@@ -20,3 +20,5 @@ include(
     ":resources",
     ":core"
 )
+include(":data")
+include(":network")

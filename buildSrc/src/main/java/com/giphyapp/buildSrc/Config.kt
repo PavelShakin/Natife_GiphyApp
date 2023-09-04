@@ -33,10 +33,11 @@ object Config {
     object Modules {
         const val application = "com.giphyapp.android"
         const val core = "com.giphyapp.core"
-        const val gif = "com.giphyapp.gif"
-        const val resources = "com.giphyapp.resources"
         const val data = "com.giphyapp.data"
         const val domain = "com.gpiphy.domain"
+        const val gif = "com.giphyapp.gif"
+        const val network = "com.giphyapp.network"
+        const val resources = "com.giphyapp.resources"
     }
     /**
      * com.giphyapp.buildSrc.Config: testInstrumentationRunner

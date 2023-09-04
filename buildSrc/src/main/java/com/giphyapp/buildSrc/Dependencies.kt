@@ -86,13 +86,23 @@ object Dependencies {
     }
 
     /**
+     * com.giphyapp.buildSrc.Dependencies: Rettofit
+     */
+    object Retrofit {
+        private const val version = "2.9.0"
+        const val retrofit = ("com.squareup.retrofit2:retrofit:$version")
+        const val converter_gson = ("com.squareup.retrofit2:converter-gson:$version")
+    }
+
+    /**
      * com.giphyapp.buildSrc.Dependencies: Modules
      */
     object Modules {
         val core = mapOf("path" to ":core")
-        val resources = mapOf("path" to ":resources")
-        val gif = mapOf("path" to ":gif")
         val data = mapOf("path" to ":data")
         val domain = mapOf("path" to ":domain")
+        val gif = mapOf("path" to ":gif")
+        val network = mapOf("path" to ":network")
+        val resources = mapOf("path" to ":resources")
     }
 }
