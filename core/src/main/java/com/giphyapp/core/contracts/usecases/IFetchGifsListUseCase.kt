@@ -3,5 +3,5 @@ package com.giphyapp.core.contracts.usecases
 import com.giphyapp.core.models.view.GifViewData
 
 interface IFetchGifsListUseCase {
-    suspend fun invoke(): List<GifViewData>
+    suspend fun invoke(): GifViewData
 }

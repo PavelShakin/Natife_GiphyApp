@@ -4,6 +4,7 @@ import com.giphyapp.core.contracts.repositories.IGifRepository
 import com.giphyapp.core.contracts.usecases.IFetchGifsListUseCase
 import com.giphyapp.core.models.mappers.GifsMapper
 import com.giphyapp.core.models.view.GifViewData
+import com.giphyapp.domain.formatters.UriFormatter
 import javax.inject.Inject
 
 class FetchGifsListUseCase @Inject constructor(
@@ -11,8 +12,11 @@ class FetchGifsListUseCase @Inject constructor(
 ) : IFetchGifsListUseCase {
 
     private val mapper = GifsMapper()
+    private val formatter = UriFormatter()
 
-    override suspend fun invoke(): List<GifViewData> {
-        return repository.getGifsList().map(mapper::toDomain)
+    override suspend fun invoke(): GifViewData {
+        val list = mapper.toDomain(repository.getGifsList())
+        val formattedList = list.resultList.map{ formatter.getCorrectLink(it) }
+        return GifViewData(formattedList)
     }
 }

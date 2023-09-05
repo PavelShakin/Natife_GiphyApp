@@ -5,7 +5,7 @@ import com.giphyapp.core.models.view.GifViewData
 sealed class GifsViewState {
     data class State(
         val isLoading: Boolean = true,
-        val gifsList: List<GifViewData> = emptyList()
+        val gifsList: GifViewData = GifViewData(emptyList())
     ) : GifsViewState()
 }
 

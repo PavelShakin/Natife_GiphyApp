@@ -1,6 +1,7 @@
 package com.giphyapp.gif.screens.gifsList
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,6 +26,7 @@ class GifsFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        viewModel.obtainEvent(GifsEvent.Load)
         return ComposeView(requireContext())
             .apply {
                 setViewCompositionStrategy(
@@ -33,6 +35,7 @@ class GifsFragment : BaseFragment() {
                 viewModel.viewStates().observe(viewLifecycleOwner) { state ->
                     when (state) {
                         is GifsViewState.State -> {
+                            Log.e("response", "${state.gifsList.resultList}")
                             setContent {
                                 AppTheme {
                                     Scaffold { paddingValues ->

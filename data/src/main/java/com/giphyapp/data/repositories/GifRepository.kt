@@ -2,7 +2,7 @@ package com.giphyapp.data.repositories
 
 import com.giphyapp.core.contracts.dispatchers.ICoroutineDispatchers
 import com.giphyapp.core.contracts.repositories.IGifRepository
-import com.giphyapp.core.models.api.GifApi
+import com.giphyapp.core.models.api.GifApiResponse
 import com.giphyapp.network.services.GifService
 import kotlinx.coroutines.withContext
 import retrofit2.Response
@@ -13,15 +13,16 @@ class GifRepository @Inject constructor(
     private val coroutineDispatchers: ICoroutineDispatchers
 ) : IGifRepository {
 
-    override suspend fun getGifsList(): List<GifApi> {
-        val response: Response<List<GifApi>> =
+    override suspend fun getGifsList(): GifApiResponse {
+        val response: Response<GifApiResponse> =
             withContext(coroutineDispatchers.io) {
-                apiService.getGifs().execute()
+                apiService.getGifs()
             }
-        return if (response.isSuccessful) {
-            response.body().orEmpty()
+        val result = if (response.isSuccessful) {
+            response.body()?.data.orEmpty()
         } else {
             emptyList()
         }
+        return GifApiResponse(result)
     }
 }

@@ -21,7 +21,7 @@ import com.giphyapp.resources.themes.GiphyAppTheme
 
 @Composable
 fun GifCard(
-    gif: GifViewData,
+    uri: String,
     onGifClicked: (Uri) -> Unit
 ) {
     val imageLoader = ImageLoader.Builder(LocalContext.current)
@@ -33,7 +33,7 @@ fun GifCard(
     Card(
         modifier = Modifier
             .fillMaxSize()
-            .clickable { onGifClicked.invoke(gif.uri) },
+            .clickable { onGifClicked.invoke(Uri.parse(uri)) },
         shape = RoundedCornerShape(10.dp),
         border = BorderStroke(
             1.dp,
@@ -45,7 +45,7 @@ fun GifCard(
                 .fillMaxSize()
         ) {
             Image(
-                painter = rememberImagePainter(gif.uri, imageLoader),
+                painter = rememberImagePainter(uri, imageLoader),
                 contentDescription = emptyString
             )
         }

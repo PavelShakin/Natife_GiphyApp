@@ -22,7 +22,7 @@ import com.giphyapp.resources.themes.GiphyAppTheme
 
 @Composable
 fun GifsListComponent(
-    gifs: List<GifViewData> = emptyList(),
+    gifs: GifViewData = GifViewData(emptyList()),
     onGifClick: (Uri) -> Unit
 ) {
     val lazyListState = rememberLazyListState()
@@ -30,7 +30,7 @@ fun GifsListComponent(
         modifier = Modifier
             .fillMaxSize()
     ) {
-        if (gifs.isEmpty()) {
+        if (gifs.resultList.isEmpty()) {
             Column(
                 modifier = Modifier.fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -47,8 +47,8 @@ fun GifsListComponent(
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp)
             ) {
-                items(items = gifs) { item ->
-                    GifCard(gif = item, onGifClicked = onGifClick)
+                items(items = gifs.resultList) { item ->
+                    GifCard(uri = item, onGifClicked = onGifClick)
                 }
             }
         }
