@@ -3,6 +3,7 @@ package com.giphyapp.android.di.modules
 import androidx.lifecycle.ViewModel
 import com.giphyapp.android.screens.splash.SplashViewModel
 import com.giphyapp.core.views.ViewModelKey
+import com.giphyapp.gif.screens.gifsList.GifsViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -14,4 +15,9 @@ interface ViewModelModule {
     @IntoMap
     @ViewModelKey(SplashViewModel::class)
     fun bindSplashViewModel(viewModel: SplashViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(GifsViewModel::class)
+    fun bindGifsViewModel(viewModel: GifsViewModel): ViewModel
 }

@@ -2,9 +2,7 @@ package com.giphyapp.core.views
 
 import android.content.Context
 import android.net.Uri
-import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.giphyapp.core.contracts.dispatchers.ICoroutineDispatchers
 import com.giphyapp.core.navigation.NavCommand
 import com.giphyapp.core.navigation.navigate
@@ -29,12 +27,5 @@ abstract class BaseFragment : Fragment() {
 
     protected fun navigateToDeepLink(uri: Uri) {
         navigate(NavCommand(uri = uri))
-    }
-
-    protected fun navigateToAction(
-        action: Int,
-        bundle: Bundle? = null
-    ) {
-        findNavController().navigate(action, bundle)
     }
 }

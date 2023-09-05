@@ -33,13 +33,21 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
+    composeOptions {
+        kotlinCompilerExtensionVersion = Dependencies.Compose.compileVersion
+    }
+
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+
+    buildFeatures {
+        viewBinding = true
+        compose = true
     }
 }
 
 dependencies {
-
     //region AndroidBase
     implementation(Dependencies.AndroidBase.ktx)
     implementation(Dependencies.AndroidBase.appcompat)
@@ -52,6 +60,13 @@ dependencies {
     implementation(Dependencies.DI.daggerSupport)
     kapt(Dependencies.DI.daggerCompiler)
     kapt(Dependencies.DI.daggerAndroidProcessor)
+    //endregion
+
+    //region Navigation
+    implementation(Dependencies.Navigation.fragment)
+    implementation(Dependencies.Navigation.ui)
+    implementation(Dependencies.Navigation.compose)
+    implementation(Dependencies.Navigation.testing)
     //endregion
 
     //region Tests

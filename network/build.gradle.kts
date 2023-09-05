@@ -65,6 +65,6 @@ dependencies {
 
     //region Retrofit
     implementation(Dependencies.Retrofit.retrofit)
-    implementation(Dependencies.Retrofit.converter_gson)
+    implementation(Dependencies.Retrofit.converterGson)
     //endregion
 }

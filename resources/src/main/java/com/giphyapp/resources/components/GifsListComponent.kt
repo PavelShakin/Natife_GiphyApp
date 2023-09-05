@@ -1,5 +1,6 @@
 package com.giphyapp.resources.components
 
+import android.net.Uri
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,14 +15,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.giphyapp.core.models.view.GifViewData
 import com.giphyapp.resources.R
 import com.giphyapp.resources.cards.GifCard
 import com.giphyapp.resources.themes.GiphyAppTheme
 
 @Composable
 fun GifsListComponent(
-    gifs: List<Int> = emptyList(),
-    onGifClick: (Int) -> Unit
+    gifs: List<GifViewData> = emptyList(),
+    onGifClick: (Uri) -> Unit
 ) {
     val lazyListState = rememberLazyListState()
     Box(

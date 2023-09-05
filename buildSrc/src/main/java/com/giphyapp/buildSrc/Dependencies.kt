@@ -91,8 +91,18 @@ object Dependencies {
     object Retrofit {
         private const val version = "2.9.0"
         const val retrofit = ("com.squareup.retrofit2:retrofit:$version")
-        const val converter_gson = ("com.squareup.retrofit2:converter-gson:$version")
+        const val converterGson = ("com.squareup.retrofit2:converter-gson:$version")
     }
+
+    /**
+     * com.giphyapp.buildSrc.Dependencies: Coil
+     */
+    object Coil {
+        private const val version = "1.4.0"
+        const val coil = ("io.coil-kt:coil-compose:$version")
+        const val coilGif = ("io.coil-kt:coil-gif:$version")
+    }
+
 
     /**
      * com.giphyapp.buildSrc.Dependencies: Modules

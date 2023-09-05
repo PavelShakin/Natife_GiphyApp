@@ -11,8 +11,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ServicesModule {
 
     @Provides
-    fun provideGifService(retrofitBuilder: Retrofit.Builder): GifService {
-        return retrofitBuilder
+    fun provideGifService(): GifService {
+        return Retrofit.Builder()
             .baseUrl(GifAPI.getBaseUrl())
             .addConverterFactory(GsonConverterFactory.create())
             .build()

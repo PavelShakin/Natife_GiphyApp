@@ -47,6 +47,9 @@ android {
 }
 
 dependencies {
+    //region Modules
+    implementation(project(Dependencies.Modules.core))
+    //endregion
 
     //region AndroidBase
     implementation(Dependencies.AndroidBase.ktx)
@@ -68,5 +71,10 @@ dependencies {
     testImplementation(Dependencies.Tests.junit)
     androidTestImplementation(Dependencies.Tests.extJunit)
     androidTestImplementation(Dependencies.Tests.espressoCore)
+    //endregion
+
+    //region Coil
+    implementation(Dependencies.Coil.coil)
+    implementation(Dependencies.Coil.coilGif)
     //endregion
 }

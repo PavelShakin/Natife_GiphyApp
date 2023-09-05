@@ -3,7 +3,7 @@ package com.giphyapp.data.di.components
 import android.app.Application
 import com.giphyapp.data.di.annotations.DataScope
 import com.giphyapp.data.di.modules.RepositoriesModule
-import com.giphyapp.network.di.NetworkComponent
+import com.giphyapp.network.di.components.NetworkComponent
 import dagger.BindsInstance
 import dagger.Component
 
