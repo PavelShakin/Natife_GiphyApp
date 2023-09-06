@@ -32,7 +32,8 @@ class GifsViewModel @Inject constructor(
                     gifsListUseCase.invoke()
                 }
                 viewState = (viewState as GifsViewState.State).copy(
-                    gifsList = gifsList
+                    gifsList = gifsList,
+                    isLoading = false
                 )
             }
         }

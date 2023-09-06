@@ -42,7 +42,8 @@ class GifsFragment : BaseFragment() {
                                         paddingValues.calculateBottomPadding()
                                         GifsListComponent(
                                             gifs = state.gifsList,
-                                            onGifClick = {}
+                                            onGifClick = {},
+                                            isLoading = state.isLoading
                                         )
                                     }
                                 }

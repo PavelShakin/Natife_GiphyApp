@@ -98,7 +98,7 @@ object Dependencies {
      * com.giphyapp.buildSrc.Dependencies: Coil
      */
     object Coil {
-        private const val version = "1.4.0"
+        private const val version = "2.4.0"
         const val coil = ("io.coil-kt:coil-compose:$version")
         const val coilGif = ("io.coil-kt:coil-gif:$version")
     }
