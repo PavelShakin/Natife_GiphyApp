@@ -10,8 +10,9 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import com.giphyapp.core.views.BaseFragment
 import com.giphyapp.core.views.injectViewModel
-import com.giphyapp.resources.components.GifsListComponent
+import com.giphyapp.resources.components.GifsComponent
 import com.giphyapp.resources.themes.AppTheme
+import com.giphyapp.resources.widgets.HeaderWidgets
 
 class GifsFragment : BaseFragment() {
 
@@ -38,12 +39,24 @@ class GifsFragment : BaseFragment() {
                             Log.e("response", "${state.gifsList.resultList}")
                             setContent {
                                 AppTheme {
-                                    Scaffold { paddingValues ->
+                                    Scaffold(
+                                        topBar = {
+                                            HeaderWidgets.HeaderWithListGridSwitch(
+                                                state = state.switchPosition,
+                                                onChange = { position ->
+                                                    viewModel.obtainEvent(
+                                                        GifsEvent.OnSwitchPositionChanged(position)
+                                                    )
+                                                }
+                                            )
+                                        }
+                                    ) { paddingValues ->
                                         paddingValues.calculateBottomPadding()
-                                        GifsListComponent(
+                                        GifsComponent(
                                             gifs = state.gifsList,
                                             onGifClick = {},
-                                            isLoading = state.isLoading
+                                            isLoading = state.isLoading,
+                                            switchPosition = state.switchPosition
                                         )
                                     }
                                 }

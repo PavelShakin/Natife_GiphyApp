@@ -16,7 +16,7 @@ class FetchGifsListUseCase @Inject constructor(
 
     override suspend fun invoke(): GifViewData {
         val list = mapper.toDomain(repository.getGifsList())
-        val formattedList = list.resultList.map{ formatter.getCorrectLink(it) }
+        val formattedList = list.resultList.map { formatter.getCorrectLink(it) }
         return GifViewData(formattedList)
     }
 }

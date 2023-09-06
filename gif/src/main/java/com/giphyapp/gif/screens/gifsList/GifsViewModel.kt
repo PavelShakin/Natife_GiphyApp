@@ -21,6 +21,7 @@ class GifsViewModel @Inject constructor(
     override fun obtainEvent(event: GifsEvent) {
         when (event) {
             is GifsEvent.Load -> reduceFetchGifsList()
+            is GifsEvent.OnSwitchPositionChanged -> reduceChangeGifPosition(event)
         }
     }
 
@@ -36,6 +37,14 @@ class GifsViewModel @Inject constructor(
                     isLoading = false
                 )
             }
+        }
+    }
+
+    private fun reduceChangeGifPosition(event: GifsEvent.OnSwitchPositionChanged) {
+        if (viewState is GifsViewState.State) {
+            viewState = (viewState as GifsViewState.State).copy(
+                switchPosition = event.switchPosition
+            )
         }
     }
 
