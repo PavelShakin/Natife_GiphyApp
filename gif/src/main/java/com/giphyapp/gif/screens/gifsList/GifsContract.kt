@@ -11,8 +11,11 @@ sealed class GifsViewState {
     ) : GifsViewState()
 }
 
-sealed class GifAction
+sealed class GifAction {
+    data class NavigateToGifDetails(val uri: String) : GifAction()
+}
 sealed class GifsEvent {
     data object Load : GifsEvent()
     data class OnSwitchPositionChanged(val switchPosition: SwitchPosition) : GifsEvent()
+    data class OnGifClicked(val uri: String) : GifsEvent()
 }

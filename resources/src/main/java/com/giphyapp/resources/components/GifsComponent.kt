@@ -1,6 +1,5 @@
 package com.giphyapp.resources.components
 
-import android.net.Uri
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -28,7 +27,7 @@ import com.giphyapp.resources.widgets.SwitchPosition
 @Composable
 fun GifsComponent(
     gifs: GifViewData = GifViewData(emptyList()),
-    onGifClick: (Uri) -> Unit,
+    onGifClick: (String) -> Unit,
     isLoading: Boolean = true,
     switchPosition: SwitchPosition
 ) {
@@ -62,13 +61,13 @@ fun GifsComponent(
                         modifier = Modifier.fillMaxSize(),
                         state = lazyListState,
                         contentPadding = contentPadding,
-                        verticalArrangement = Arrangement.spacedBy(10.dp),
+                        verticalArrangement = Arrangement.spacedBy(16.dp),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         items(items = gifs.resultList) { item ->
                             GifsListCard(
                                 uri = item,
-                                onGifClicked = onGifClick
+                                onGifClicked = { onGifClick.invoke(it) }
                             )
                         }
                     }
@@ -80,13 +79,13 @@ fun GifsComponent(
                         modifier = Modifier.fillMaxSize(),
                         state = lazyGridState,
                         contentPadding = contentPadding,
-                        verticalItemSpacing = 4.dp,
-                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                        verticalItemSpacing = 8.dp,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         items(items = gifs.resultList) { item ->
                             GifsListCard(
                                 uri = item,
-                                onGifClicked = onGifClick
+                                onGifClicked = { onGifClick.invoke(it) }
                             )
                         }
                     }

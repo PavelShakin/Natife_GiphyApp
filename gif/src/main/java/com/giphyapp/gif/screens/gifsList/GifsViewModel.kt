@@ -22,6 +22,7 @@ class GifsViewModel @Inject constructor(
         when (event) {
             is GifsEvent.Load -> reduceFetchGifsList()
             is GifsEvent.OnSwitchPositionChanged -> reduceChangeGifPosition(event)
+            is GifsEvent.OnGifClicked -> reduceOnGifClicked(event)
         }
     }
 
@@ -45,6 +46,12 @@ class GifsViewModel @Inject constructor(
             viewState = (viewState as GifsViewState.State).copy(
                 switchPosition = event.switchPosition
             )
+        }
+    }
+
+    private fun reduceOnGifClicked(event: GifsEvent.OnGifClicked) {
+        if (viewState is GifsViewState.State) {
+            viewAction = GifAction.NavigateToGifDetails(event.uri)
         }
     }
 

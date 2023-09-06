@@ -9,5 +9,16 @@
     <fragment
         android:id="@+id/gifFragment"
         android:name="com.giphyapp.gif.screens.gifsList.GifsFragment"
-        android:label="" />
+        android:label="">
+
+        <action
+            android:id="@+id/navigate_to_GifDeatailsFragment"
+            app:destination="@+id/gifDetailsFragment"
+            app:popUpTo="@id/gifFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gifDetailsFragment"
+        android:name="com.giphyapp.gif.screens.gifDetails.GifDetailsFragment"
+        android:label=""/>
 </navigation>

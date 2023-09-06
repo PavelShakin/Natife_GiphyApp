@@ -2,6 +2,7 @@ package com.giphyapp.android.di.modules
 
 import com.giphyapp.android.screens.splash.SplashFragment
 import com.giphyapp.core.views.BaseFragment
+import com.giphyapp.gif.screens.gifDetails.GifDetailsFragment
 import com.giphyapp.gif.screens.gifsList.GifsFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -19,5 +20,9 @@ interface FragmentBuildersModule {
 
     //region Gif
     @ContributesAndroidInjector
-    fun contributeGifsListFragment(): GifsFragment
+    fun contributeGifsFragment(): GifsFragment
+
+    @ContributesAndroidInjector
+    fun contributeGifDetailsFragment(): GifDetailsFragment
+    //endregion
 }
