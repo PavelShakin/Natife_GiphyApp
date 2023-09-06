@@ -7,4 +7,5 @@ object GlobalConstants {
 
 object BundleKey {
     const val GIF_URI_KEY = "GIF_URI_KEY"
+    const val SCREEN_STATE_KEY = "SCREEN_STATE_KEY"
 }
