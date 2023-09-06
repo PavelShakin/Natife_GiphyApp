@@ -53,16 +53,17 @@ android {
 
 dependencies {
     //region Modules
-//    implementation(project(Dependencies.Modules.core))
-//    implementation(project(Dependencies.Modules.resources))
-//    implementation(project(Dependencies.Modules.data))
-//    implementation(project(Dependencies.Modules.domain))
+    implementation(project(Dependencies.Modules.core))
+    implementation(project(Dependencies.Modules.data))
+    implementation(project(Dependencies.Modules.domain))
+    implementation(project(Dependencies.Modules.gif))
+    implementation(project(Dependencies.Modules.network))
+    implementation(project(Dependencies.Modules.resources))
     //endregion
 
     //region AndroidBase
     implementation(Dependencies.AndroidBase.ktx)
     implementation(Dependencies.AndroidBase.appcompat)
-    implementation(Dependencies.AndroidBase.material)
     implementation(Dependencies.AndroidBase.constraintLayout)
     runtimeOnly(Dependencies.AndroidBase.kotlinxMetadataJvm)
     //endregion
@@ -90,12 +91,9 @@ dependencies {
     implementation(Dependencies.Compose.compiler)
     //endregion
 
-    //region Lifecycle
-    implementation(Dependencies.Lifecycle.runtime)
-    implementation(Dependencies.Lifecycle.livedata)
-    implementation(Dependencies.Lifecycle.viewModel)
-    implementation(Dependencies.Lifecycle.viewModelCompose)
-    implementation(Dependencies.Lifecycle.viewModelSavedState)
-    kapt(Dependencies.Lifecycle.compiler)
+    //region Tests
+    testImplementation(Dependencies.Tests.junit)
+    androidTestImplementation(Dependencies.Tests.extJunit)
+    androidTestImplementation(Dependencies.Tests.espressoCore)
     //endregion
 }

@@ -8,10 +8,8 @@ object Dependencies {
     object AndroidBase {
         const val ktx = ("androidx.core:core-ktx:1.10.1")
         const val appcompat = ("androidx.appcompat:appcompat:1.6.1")
-        const val material = ("androidx.compose.material3:material3:1.1.1")
         const val constraintLayout = ("androidx.constraintlayout:constraintlayout:2.2.0-alpha12")
         const val kotlinxMetadataJvm = ("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0")
-        const val fragments = ("androidx.fragment:fragment-ktx:1.5.5")
     }
 
     /**
@@ -79,13 +77,42 @@ object Dependencies {
     }
 
     /**
+     * com.giphyapp.buildSrc.Dependencies: Tests
+     */
+    object Tests {
+        const val junit = ("junit:junit:4.13.2")
+        const val extJunit = ("androidx.test.ext:junit:1.1.5")
+        const val espressoCore = ("androidx.test.espresso:espresso-core:3.5.1")
+    }
+
+    /**
+     * com.giphyapp.buildSrc.Dependencies: Rettofit
+     */
+    object Retrofit {
+        private const val version = "2.9.0"
+        const val retrofit = ("com.squareup.retrofit2:retrofit:$version")
+        const val converterGson = ("com.squareup.retrofit2:converter-gson:$version")
+    }
+
+    /**
+     * com.giphyapp.buildSrc.Dependencies: Coil
+     */
+    object Coil {
+        private const val version = "2.4.0"
+        const val coil = ("io.coil-kt:coil-compose:$version")
+        const val coilGif = ("io.coil-kt:coil-gif:$version")
+    }
+
+
+    /**
      * com.giphyapp.buildSrc.Dependencies: Modules
      */
     object Modules {
         val core = mapOf("path" to ":core")
-        val resources = mapOf("path" to ":resources")
-        val gif = mapOf("path" to ":gif")
         val data = mapOf("path" to ":data")
         val domain = mapOf("path" to ":domain")
+        val gif = mapOf("path" to ":gif")
+        val network = mapOf("path" to ":network")
+        val resources = mapOf("path" to ":resources")
     }
 }

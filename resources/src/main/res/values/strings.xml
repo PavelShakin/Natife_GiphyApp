@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">resources</string>
+
+    <!-- Error -->
+    <string name="error_gif_empty_list">Oops, there isn\'t any gifs</string>
+</resources>

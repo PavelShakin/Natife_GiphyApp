@@ -15,5 +15,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "GiphyApp"
 include(
-    ":app"
+    ":app",
+    ":core",
+    ":data",
+    ":domain",
+    ":gif",
+    ":network",
+    ":resources"
 )

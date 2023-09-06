@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gif_nav_graph"
+    app:startDestination="@id/gifFragment">
+
+    <deepLink app:uri="giphyapp://gif" />
+
+    <fragment
+        android:id="@+id/gifFragment"
+        android:name="com.giphyapp.gif.screens.gifsList.GifsFragment"
+        android:label="">
+
+        <action
+            android:id="@+id/navigate_to_GifDeatailsFragment"
+            app:destination="@+id/gifDetailsFragment"
+            app:popUpTo="@id/gifFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gifDetailsFragment"
+        android:name="com.giphyapp.gif.screens.gifDetails.GifDetailsFragment"
+        android:label=""/>
+</navigation>
