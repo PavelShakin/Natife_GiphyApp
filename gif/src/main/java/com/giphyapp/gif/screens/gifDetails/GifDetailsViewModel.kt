@@ -18,6 +18,7 @@ class GifDetailsViewModel @Inject constructor(
     override fun obtainEvent(event: GifDetailsEvent) {
         when (event) {
             is GifDetailsEvent.Load -> reduceLoadGif(event)
+            is GifDetailsEvent.ConfigurationChanged -> reduceConfigurationChanged(event)
         }
     }
 
@@ -27,6 +28,14 @@ class GifDetailsViewModel @Inject constructor(
             viewState = (viewState as GifDetailsViewState.State).copy(
                 uri = event.uri,
                 isLoading = false
+            )
+        }
+    }
+
+    private fun reduceConfigurationChanged(event: GifDetailsEvent.ConfigurationChanged) {
+        if (viewState is GifDetailsViewState.State) {
+            viewState = (viewState as GifDetailsViewState.State).copy(
+                configurationState = event.configuration
             )
         }
     }

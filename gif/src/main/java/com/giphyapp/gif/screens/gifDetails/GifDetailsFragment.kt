@@ -1,5 +1,6 @@
 package com.giphyapp.gif.screens.gifDetails
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -48,12 +49,20 @@ class GifDetailsFragment : BaseFragment() {
                                     }
                                 ) { paddingValues ->
                                     paddingValues.calculateBottomPadding()
-                                    GifDetailsComponent(uri = state.uri)
+                                    GifDetailsComponent(
+                                        uri = state.uri,
+                                        configuration = state.configurationState
+                                    )
                                 }
                             }
                         }
                     }
                 }
             }
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        viewModel.obtainEvent(GifDetailsEvent.ConfigurationChanged(newConfig))
     }
 }
